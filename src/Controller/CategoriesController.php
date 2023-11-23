@@ -40,7 +40,7 @@ class CategoriesController extends AbstractController
             //on exécute la requête
             $manager->flush();
             //on redirige vers la liste des catégories
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_categories');
         }
 
         return $this->render('categories/ajouter.html.twig', [
