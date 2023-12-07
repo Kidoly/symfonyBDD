@@ -16,7 +16,7 @@ class ChatonType extends AbstractType
         $builder
             ->add('Nom')
             ->add('image', FileType::class, [
-                'label' => 'Image du chaton',
+                'label' => 'Photo',
                 'mapped' => false, // Le champ n'est pas mappé à une propriété de l'entité
                 'required' => false, // Le champ n'est pas obligatoire
             ])// Upload une photo
@@ -25,10 +25,6 @@ class ChatonType extends AbstractType
                 'expanded' => false,
                 'multiple' => false,
                 'placeholder' => 'Choisissez une catégorie',
-            ])
-            ->add('OK', SubmitType::class, [
-                'attr' => ['class' => 'btn btn-dark'],
-                'label'=> 'Ajouter',
             ])
 
         ;

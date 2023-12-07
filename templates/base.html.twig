@@ -29,6 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 {#{{ render(controller("App\\Controller\\HomeController::menu")) }} #}
+                <li class="nav-item">
+                    <a class="nav-link" href={{ path("app_home") }}>Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href={{ path("app_chatons_index") }}>Chatons</a>
+                </li>
+
             </ul>
         </div>
     </div>
