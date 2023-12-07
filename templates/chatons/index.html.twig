@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chaton index{% endblock %}
+
+{% block body %}
+    <h1>Chaton index</h1>
+
+    <div class="row">
+        {% for chaton in chatons %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{{ asset(chaton.Photo) }}" class="card-img-top" alt="{{ chaton.Nom }}">
+                    
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ chaton.Nom }}</h5>
+                        <p class="card-text">{{ chaton.categorie.titre }}</p>
+                        <a href="{{ path('app_chatons_show', {'id': chaton.id}) }}" class="btn btn-dark">Afficher</a>
+                        <a href="{{ path('app_chatons_edit', {'id': chaton.id}) }}" class="btn btn-dark">Modifier</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col">
+                <div class="alert alert-info" role="alert">
+                    Rien à afficher
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ path('app_chatons_new') }}" class="btn btn-dark">Ajouter un chaton</a>
+{% endblock %}
